@@ -50,7 +50,7 @@ class QA_Setting():
     def __init__(self, uri=None):
         self.lock = Lock()
 
-        self.mongo_uri = uri or self.get_mongo()
+        self.mongo_uri = uri or os.getenv('MONGODB_URI') or self.get_mongo()
         self.username = None
         self.password = None
 

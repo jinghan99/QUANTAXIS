@@ -1,0 +1,13 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="QUANTAXIS Backend 18089" type="PythonConfigurationType" factoryName="Python">
+    <option name="SDK_HOME" value="C:\Users\jinghan\miniconda3\envs\quantaxis\python.exe" />
+    <option name="IS_MODULE_SDK" value="false" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    <option name="SCRIPT_NAME" value="$PROJECT_DIR$/local-dev/run_backend.py" />
+    <option name="PARAMETERS" value="--address=127.0.0.1 --port=18089" />
+    <option name="ADD_CONTENT_ROOTS" value="true" />
+    <option name="ADD_SOURCE_ROOTS" value="true" />
+    <envs><env name="PYTHONUNBUFFERED" value="1" /><env name="PYTHONUTF8" value="1" /></envs>
+    <method v="2" />
+  </configuration>
+</component>

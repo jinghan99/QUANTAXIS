@@ -1,0 +1,35 @@
+{
+  "_id": "bfe0434d-adba-416b-9c5c-c817228b791b",
+  "kind": "deployment_readback",
+  "environment": "dev",
+  "created_at": "2026-11-01T05:34:31.343120+00:00",
+  "quantaxis": "2.1.0.alpha2",
+  "source": "/mnt/e/PycharmProjects/QUANTAXIS/QUANTAXIS/__init__.py",
+  "python": "3.11.17",
+  "readiness": {
+    "status": "ready",
+    "environment": "dev",
+    "debug": true,
+    "autoreload": true,
+    "mongodb_server": [
+      "192.168.1.35",
+      27017
+    ],
+    "mongodb_database": "quantaxis",
+    "data_status": "empty",
+    "counts": {
+      "stock_day": 0,
+      "stock_min": 0,
+      "index_day": 0,
+      "history": 0
+    },
+    "scheduler_collection": "jobs_dev"
+  },
+  "accountlist": {
+    "res": []
+  },
+  "scheduler": {
+    "res": []
+  },
+  "write_readback": "passed"
+}

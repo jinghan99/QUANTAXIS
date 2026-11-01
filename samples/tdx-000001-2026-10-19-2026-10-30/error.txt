@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "E:\PycharmProjects\QUANTAXIS\local-dev\collect_sample.py", line 40, in main
+    raise RuntimeError('TDX returned no bars; no alternative data source was substituted.')
+RuntimeError: TDX returned no bars; no alternative data source was substituted.

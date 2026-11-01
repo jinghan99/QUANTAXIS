@@ -57,8 +57,33 @@ class QAUserhander(QABaseHandler):
     def get(self):
         self.write({'status': 200, 'result':{'user_cookie': 'xx'}})
 
+
+class Readiness(QABaseHandler):
+    def get(self):
+        try:
+            client = QASETTING.client
+            client.admin.command('ping')
+            database = client.quantaxis
+            counts = {name: database[name].estimated_document_count()
+                      for name in ('stock_day', 'stock_min', 'index_day', 'history')}
+            self.write({
+                'status': 'ready',
+                'environment': os.getenv('QUANTAXIS_ENV', 'dev'),
+                'debug': self.application.settings.get('debug', False),
+                'autoreload': self.application.settings.get('autoreload', False),
+                'mongodb_server': list(client.address),
+                'mongodb_database': database.name,
+                'data_status': 'available' if counts['stock_day'] else 'empty',
+                'counts': counts,
+                'scheduler_collection': os.getenv('QA_SCHEDULER_COLLECTION', 'jobs'),
+            })
+        except Exception as exc:
+            self.set_status(503)
+            self.write({'status': 'unavailable', 'error_type': type(exc).__name__})
+
 #term_manager = SingleTermManager(shell_command=['bash'])
 handlers = [
+    (r"/readiness", Readiness),
     (r"/",
      INDEX),
     (r"/command/run",
@@ -79,7 +104,7 @@ handlers = [
 
 def main():
     asyncio.set_event_loop(asyncio.new_event_loop())
-    define("port", default=8010, type=int, help="服务器监听端口号")
+    define("port", default=18089, type=int, help="服务器监听端口号")
 
     define("address", default='0.0.0.0', type=str, help='服务器地址')
     define("content", default=[], type=str, multiple=True, help="控制台输出内容")
@@ -92,11 +117,12 @@ def main():
     start_server(handlers, address, port)
 
 
-def start_server(handlers, address='0.0.0.0', port=8010):
+def start_server(handlers, address='0.0.0.0', port=18089):
+    development = os.getenv('QUANTAXIS_ENV', 'dev') != 'prod'
     apps = Application(
         handlers=handlers,
-        debug=True,
-        autoreload=True,
+        debug=development,
+        autoreload=development,
         compress_response=True
     )
     

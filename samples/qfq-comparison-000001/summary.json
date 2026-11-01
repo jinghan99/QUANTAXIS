@@ -1,0 +1,67 @@
+{
+  "security": "000001.SZ",
+  "start": "2025-01-01",
+  "end": "2026-10-30",
+  "tdx_endpoint": {
+    "ip": "shtdx.gtjas.com",
+    "port": 7709
+  },
+  "quantaxis_rows": 441,
+  "tencent_rows": 441,
+  "matched_rows": 441,
+  "dividend_events": [
+    {
+      "date": "2025-06-12",
+      "fenhong": "3.619999885559082",
+      "peigu": "0.0",
+      "peigujia": "0.0",
+      "songzhuangu": "0.0"
+    },
+    {
+      "date": "2025-10-15",
+      "fenhong": "2.359999895095825",
+      "peigu": "0.0",
+      "peigujia": "0.0",
+      "songzhuangu": "0.0"
+    },
+    {
+      "date": "2026-06-12",
+      "fenhong": "3.5999999046325684",
+      "peigu": "0.0",
+      "peigujia": "0.0",
+      "songzhuangu": "0.0"
+    },
+    {
+      "date": "2026-09-24",
+      "fenhong": "2.490000009536743",
+      "peigu": "0.0",
+      "peigujia": "0.0",
+      "songzhuangu": "0.0"
+    }
+  ],
+  "anchor": "2026-10-30 (last TDX bar in this computation)",
+  "max_ohlc_abs_difference": 0.15570879286632255,
+  "rows_with_difference_over_0_001": 420,
+  "all_dates_match": true,
+  "examples": [
+    {
+      "date": "2025-01-02",
+      "close_qa": 10.283410448708212,
+      "close_tencent": 10.223,
+      "close_delta": 0.060410448708211106
+    },
+    {
+      "date": "2025-12-01",
+      "close_qa": 11.074637623920482,
+      "close_tencent": 11.081,
+      "close_delta": -0.0063623760795170625
+    },
+    {
+      "date": "2026-10-30",
+      "close_qa": 11.64,
+      "close_tencent": 11.64,
+      "close_delta": 0.0
+    }
+  ],
+  "database_market_writes": 0
+}

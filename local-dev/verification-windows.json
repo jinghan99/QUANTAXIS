@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "interpreter": "C:\\Users\\jinghan\\miniconda3\\envs\\quantaxis\\python.exe",
+  "python": "3.11.18",
+  "readiness": {
+    "status": "ready",
+    "environment": "dev",
+    "debug": true,
+    "autoreload": true,
+    "mongodb_server": [
+      "192.168.1.35",
+      27017
+    ],
+    "mongodb_database": "quantaxis",
+    "data_status": "empty",
+    "counts": {
+      "stock_day": 0,
+      "stock_min": 0,
+      "index_day": 0,
+      "history": 0
+    },
+    "scheduler_collection": "jobs_dev"
+  },
+  "accountlist": {
+    "res": []
+  },
+  "temporary_ports": [
+    18010,
+    18090
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "source": "QUANTAXIS.QAFetch.QATdx.QA_fetch_get_stock_day",
+  "code": "000001",
+  "start": "2026-10-19",
+  "end": "2026-10-30",
+  "adjustment": "unadjusted",
+  "attempted_at": "2026-11-01T05:49:38.807081+00:00",
+  "status": "fetched",
+  "attempts": [
+    {
+      "ip": "119.97.185.59",
+      "port": 7709,
+      "rows": 0
+    },
+    {
+      "ip": "124.71.9.153",
+      "port": 7709,
+      "rows": 0
+    },
+    {
+      "ip": "116.205.163.254",
+      "port": 7709,
+      "rows": 0
+    },
+    {
+      "ip": "180.153.18.170",
+      "port": 7709,
+      "rows": 0
+    },
+    {
+      "ip": "shtdx.gtjas.com",
+      "port": 7709,
+      "rows": 10
+    }
+  ],
+  "endpoint": {
+    "ip": "shtdx.gtjas.com",
+    "port": 7709
+  },
+  "rows": 10,
+  "columns": [
+    "open",
+    "close",
+    "high",
+    "low",
+    "vol",
+    "amount",
+    "date",
+    "code",
+    "date_stamp"
+  ],
+  "first_date": "2026-10-19",
+  "last_date": "2026-10-30",
+  "units": {
+    "price": "CNY",
+    "vol": "lots of 100 shares",
+    "amount": "CNY"
+  },
+  "validation": "identity/date-window/duplicates/numerical/OHLC passed",
+  "trading_calendar_coverage": "not independently verified",
+  "database_market_writes": 0
+}

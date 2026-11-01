@@ -1,4 +1,5 @@
 import datetime
+import os
 import threading
 
 import pymongo
@@ -19,7 +20,8 @@ job_ids = []
 # 初始化
 
 
-def init_scheduler(database='qascheduler', collection='jobs'):
+def init_scheduler(database='qascheduler', collection=None):
+    collection = collection or os.getenv('QA_SCHEDULER_COLLECTION', 'jobs')
 
     jobstores = {
         'default': MongoDBJobStore(database=database, collection=collection, client=pymongo.MongoClient(host=mongo_ip, port=mongo_port))
