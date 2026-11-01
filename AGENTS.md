@@ -138,7 +138,11 @@
 
 ## 10. Git、部署和交付
 
-- origin：`git@github.com:jinghan99/QUANTAXIS.git`；upstream：`https://github.com/yutiansut/QUANTAXIS.git`。保留当前分支和用户改动，分支默认使用 `codex/` 前缀。
+- origin：`git@github.com:jinghan99/QUANTAXIS.git`；upstream：`https://github.com/yutiansut/QUANTAXIS.git`。保留当前分支和用户改动，不擅自切换、重建或重置分支。
+- **环境与分支绑定**：`dev` 是开发环境分支，业务功能开发、修复和适配在 `dev` 中完成；`master` 是主分支，也是生产发布的唯一来源。
+- **35 服务器仅使用 master**：生产环境 `192.168.1.35` 只能检出、拉取和部署 Fork 的 `master` 分支，禁止拉取或部署 `dev`、临时功能分支或未合并的开发版本。
+- **开发完成后再合并**：`dev` 上的开发完成、相关测试及适用回归通过后，说明变更范围、测试结果和剩余问题，经用户确认后才可合并到 `master`；测试未完成或失败时不得合并。临时功能分支须先进入 `dev` 完成验证。
+- **发布顺序**：`dev` 开发与测试 → 确认合并 → `master` → 按已授权流程推送到 Fork → 用户确认部署 → 35 服务器拉取 `origin/master` 并验证。不得把合并或 push 等同于获准自动部署。
 - 提交前核对 staged 文件；用户只授权 AGENTS.md 时，不捎带业务、依赖、配置或样本。commit、push、PR 和生产部署分别按用户授权范围操作。
 - 更新主仓库前检查工作区和既有 merge/rebase；不自动 stash、reset 或强推。变更说明和必要的 changelog 与实际最终实现一致。
 - 修改端口或写配置不代表已启动；开发成功不代表生产已部署；prod 到 35 的部署须另行报告和确认。
